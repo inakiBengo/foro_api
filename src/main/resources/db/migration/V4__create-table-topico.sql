@@ -1,4 +1,4 @@
-CREATE TABLE Tópico (
+CREATE TABLE Topico (
     id INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(255) NOT NULL,
     mensaje TEXT NOT NULL,
