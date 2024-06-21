@@ -7,6 +7,6 @@ CREATE TABLE Topico (
     autor_id INT,
     curso_id INT,
     respuestas INT,
-    FOREIGN KEY (autor_id) REFERENCES Usuario(id),
-    FOREIGN KEY (curso_id) REFERENCES Curso(id)
+    CONSTRAINT fk_topico_autor_id FOREIGN KEY (autor_id) REFERENCES Usuario(id),
+    CONSTRAINT fk_topico_curso_id FOREIGN KEY (curso_id) REFERENCES Curso(id)
 );

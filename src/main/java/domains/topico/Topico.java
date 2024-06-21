@@ -1,5 +1,6 @@
 package domains.topico;
 
+import domains.usuario.Usuario;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -17,8 +18,8 @@ public class Topico {
     private TopicoStatus status;
     private Integer respuestas;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "autor_id")
-    private Long autorId;
+    @JoinColumn(name = "usuario_id")
+    private Usuario autorId;
 
-    private Long cursoId;
+    private Curso cursoId;
 }
