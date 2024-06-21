@@ -13,5 +13,12 @@ public class Topico {
     private String titulo;
     private String mensaje;
     private LocalDateTime fechaCreacion;
+    @Enumerated(EnumType.STRING)
     private TopicoStatus status;
+    private Integer respuestas;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "autor_id")
+    private Long autorId;
+
+    private Long cursoId;
 }
