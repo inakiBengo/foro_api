@@ -1,8 +1,6 @@
-CREATE TABLE Usuario (
+CREATE TABLE usuario (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(255) NOT NULL,
-    correoElectronico VARCHAR(255) NOT NULL UNIQUE,
-    contrasena VARCHAR(255) NOT NULL,
-    perfil_id bigint NOT NULL,
-    CONSTRAINT fk_usuario_perfil_id FOREIGN KEY (perfil_id) REFERENCES Perfil(id)
+    correo_electronico VARCHAR(255) NOT NULL UNIQUE,
+    contrasena VARCHAR(255) NOT NULL
 );
