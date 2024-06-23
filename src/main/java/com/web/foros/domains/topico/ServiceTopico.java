@@ -21,7 +21,7 @@ public class ServiceTopico {
     @Autowired
     private RepositoryCurso repositoryCurso;
 
-    public DataTopicoDetalle registrar (DataTopicoRegister data) {
+    public Topico registrar (DataTopicoRegister data) {
         var TopicoExists = repositoryTopico.existTopico(data.titulo(), data.mensaje());
         if (TopicoExists != null) {
             throw new IntegrityValidation("Este tópico ya existe y su id es: "+TopicoExists);
@@ -39,7 +39,7 @@ public class ServiceTopico {
         var topico = new Topico(data.titulo(), data.mensaje(), fechaDeCreacion, status, usuario, curso);
 
         repositoryTopico.save(topico);
-        return new DataTopicoDetalle(topico);
+        return topico;
     }
 
     public Page<DataTopicoDetalle> getAllTopicos (Pageable pagination) {
@@ -53,7 +53,7 @@ public class ServiceTopico {
         return new DataTopicoDetalle(topico);
     }
 
-    public DataTopicoDetalle updateTopico (Long id,DataTopicoRegister data) {
+    public DataTopicoDetalle updateTopico (Long id,DataTopicoUpdate data) {
         Topico topico = repositoryTopico.findById(id)
                 .orElseThrow(() -> new IntegrityValidation("No se encontro el topico solicitado"));
         System.out.println(topico);

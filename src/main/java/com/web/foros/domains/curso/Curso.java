@@ -17,5 +17,20 @@ public class Curso {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
-    private String categoria;
+    @Enumerated(EnumType.STRING)
+    private Categoria categoria;
+
+    public Curso (DataRegisterCurso data) {
+        this.categoria = Categoria.valueOf(data.categoria());
+        this.nombre = data.nombre();
+    }
+
+    public void update (DataUpdateCurso data) {
+        if (data.nombre() != null) {
+            this.nombre = data.nombre();
+        }
+        if (data.categoria() != null) {
+            this.categoria = Categoria.valueOf(data.categoria());
+        }
+    }
 }

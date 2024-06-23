@@ -12,7 +12,7 @@ public record DataTopicoDetalle(
         Long autor,
         Long curso
 ) {
-    DataTopicoDetalle (Topico topico) {
+    public DataTopicoDetalle (Topico topico) {
         this(topico.getId(),
         topico.getTitulo(),
         topico.getMensaje(),

@@ -1,14 +1,14 @@
 package com.web.foros.domains.perfil;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Table(name = "perfil")
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Builder
 @EqualsAndHashCode(of = "id")
 public class Perfil {
     @Id

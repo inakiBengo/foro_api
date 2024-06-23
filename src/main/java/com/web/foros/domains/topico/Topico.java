@@ -49,7 +49,7 @@ public class Topico {
         this.curso = curso;
     }
 
-    public void update (DataTopicoRegister data) {
+    public void update (DataTopicoUpdate data) {
         if (data.titulo() != null) {
             this.titulo = data.titulo();
         }
